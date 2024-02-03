@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     const ext = mime.getExtension(file.mimetype);
     console.log(ext);
-    const filename = `${Date.now()}-${file.originalname}`;
+    const filename = `${req.body.userId}-${file.originalname}`;
     cb(null, filename);
   },
 });
